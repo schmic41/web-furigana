@@ -1,0 +1,25 @@
+{
+
+  "manifest_version": 2,
+  "name": "Web Furigana",
+  "version": "1.0",
+
+  "description": "Adds ruby text to HTML.",
+
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*/*", "file:///D:/web-furigana/test.html"
+      ],
+      "js": ["web-furigana.js"]
+    }
+  ],
+
+  "web_accessible_resources": [
+    "resources/ipa-dict-master/data/*.txt"
+  ]
+
+}
