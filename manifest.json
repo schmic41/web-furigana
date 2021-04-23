@@ -1,25 +1,28 @@
 {
-
   "manifest_version": 2,
   "name": "Web Furigana",
+  "author": "mcscics",
   "version": "1.0",
-
-  "description": "Adds ruby text to HTML.",
-
+  "description": "Adds ruby text to HTML",
   "icons": {
-    "48": "icons/border-48.png"
+    "48": "icons/ruby.png"
   },
-
   "content_scripts": [
     {
-      "matches": ["*://*/*", "file:///D:/web-furigana/test.html"
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "file://*/*"
       ],
-      "js": ["web-furigana.js"]
+      "js": [
+        "web-furigana.js"
+      ]
     }
   ],
-
   "web_accessible_resources": [
-    "resources/ipa-dict-master/data/*.txt"
-  ]
-
+    "resources/data/*.txt"
+  ],
+  "options_ui": {
+    "page": "options.html"
+  }
 }

@@ -1,5 +1,5 @@
 // Paths to all IPA dicts
-const prefix = "resources/ipa-dict-master/data/";
+const prefix = "resources/data/";
 const arabic = prefix + "ar.txt";
 const german = prefix + "de.txt";
 const en_UK = prefix + "en_UK.txt";
@@ -30,7 +30,6 @@ const cantonese = prefix + "yue.txt";
 const mandarin_simplified = prefix + "zh_hans.txt";
 const mandarin_traditional = prefix + "zh.hant.txt";
 
-
 function parse_dict(dict_in) {
     let w = new Map();
     // Split on newline, split on tab, add to map
@@ -51,6 +50,7 @@ function edit_html(raw_dict) {
             let y = z[i];
             switch (y) {
                 case " ":
+                case "\t":
                 case "\r\n":
                 case "\n":
                 case ",":
